@@ -10,6 +10,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 
 import { AppRoutes } from './src/routes/app.routes';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,6 +22,8 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />
   }
+
+  // AsyncStorage.removeItem('@savepass:logins');
 
   return (
     <NavigationContainer>
